@@ -68,7 +68,7 @@ with col1:
                 2. List the likely key ingredients.
                 3. Give a 1-sentence explanation for the score.
 
-                Return the data in this EXACT format for my app to read:
+                Return the data in this EXACT format for my app to read without the the units of g:
                 Food Name | Calories | Protein | Carbs | Fat | Health Score | Ingredients | Explanation
                 """
                 
@@ -91,7 +91,10 @@ with col1:
                         "Explanation": data[7].strip()
                     }
             except Exception as e:
-                st.error("AI formatting error. Please try snapping the photo again!")
+                st.error(f"Code Error: {e}")
+                # This will print exactly what the AI sent back so we can see why it broke
+                if 'response' in locals():
+                    st.info(f"Raw AI Output: {response.text}")
 
 with col2:
     if 'last_analysis' in st.session_state:
