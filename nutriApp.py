@@ -5,14 +5,14 @@ from google import genai
 from PIL import Image
 import pandas as pd
 import plotly.express as px
-import datetime
+import datetime 
 
 # --- 1. SECURITY & CONFIG ---
 # Load the key from the .env file
 load_dotenv()
 MY_API_KEY = os.getenv("GEMINI_API_KEY")
 
-st.set_page_config(page_title="NutriSnap Pro", layout="wide", page_icon="🥗")
+st.set_page_config(page_title="MARS Tracker", layout="wide", page_icon="🥗")
 
 # The Single, Strict Key Check
 if not MY_API_KEY:
