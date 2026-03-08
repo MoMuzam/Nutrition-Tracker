@@ -1,3 +1,15 @@
+Required Assets to run the program:
+
+import streamlit as st
+import os
+from dotenv import load_dotenv
+from google import genai
+from PIL import Image
+import pandas as pd
+import plotly.express as px
+import datetime 
+
+
 Our app is called Nutrition Tracker. The application enables users to comprehend the nutritional content of 
 their daily food and beverage consumption. The team is called Code Munchers with members: Mohammed,
 Sofiya, Rubdeep, and Adrian. The users of this application need to take a photo of what they are going to be consuming,
