@@ -122,9 +122,14 @@ with col2:
         st.plotly_chart(fig, use_container_width=True)
 
         if st.button("✅ Log this Meal"):
+            # 1. Save the data to the CSV file
             new_row = pd.DataFrame([res])
             new_row.to_csv(LOG_FILE, mode='a', header=False, index=False)
-            st.success("Saved to your log!")
+            
+            # 2. Clear the meal from active memory so the screen resets
+            del st.session_state['last_analysis']
+            
+            # 3. Force the app to immediately refresh the page and read the new CSV
             st.rerun()
 
 # --- 4. DATA HISTORY ---
